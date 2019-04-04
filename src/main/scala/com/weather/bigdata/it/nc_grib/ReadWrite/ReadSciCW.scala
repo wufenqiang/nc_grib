@@ -154,11 +154,12 @@ object ReadSciCW {
     //对本地输入文件名前加/做判断及\\转译/
     val fileName: String = {
       val fileName1 = ncFileName.replace("\\", "/")
-      if (fileName1.startsWith("/")) {
-        fileName1
-      } else {
-        "/" + fileName1
-      }
+      //      if (fileName1.startsWith("/")) {
+      //        fileName1
+      //      } else {
+      //        "/" + fileName1
+      //      }
+      fileName1
     }
     val path = new Path(fileName)
 

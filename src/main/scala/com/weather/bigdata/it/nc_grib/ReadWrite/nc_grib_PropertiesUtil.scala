@@ -5,7 +5,7 @@ import java.util.Properties
 
 import org.apache.log4j.Logger
 
-private object PropertiesUtil {
+object nc_grib_PropertiesUtil {
   val log:Logger=Logger.getRootLogger
   private val prop:java.util.Properties={
     val prop0 :Properties = new java.util.Properties()
@@ -22,5 +22,7 @@ private object PropertiesUtil {
   val writeCDFVersion=this.prop.getProperty("writeCDFVersion")
 
   val timeName=this.prop.getProperty("timeName")
+
+
   val reftimeKey:String=timeName
 }

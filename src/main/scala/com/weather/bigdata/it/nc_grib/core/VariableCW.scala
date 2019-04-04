@@ -1,8 +1,8 @@
 package com.weather.bigdata.it.nc_grib.core
 
 import java.io.Serializable
-import java.util.Date
 
+import com.weather.bigdata.it.nc_grib.ReadWrite.nc_grib_PropertiesUtil
 import org.dia.utils.NetCDFUtils
 import ucar.ma2.{DataType, Index}
 import ucar.nc2.{Attribute, Dimension}
@@ -11,7 +11,7 @@ import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 
 class VariableCW (var name: String, var dataType:String, val array: ucar.ma2.Array, val shape:Array[Int], val attributes: mutable.HashMap[String, String], val dims: scala.List[(String, Int)])extends Serializable {
-  println("creat VariableCW:name="+name+",dataType="+dataType+",Len="+shape.reduce((x,y)=>x*y)+";"+new Date())
+  nc_grib_PropertiesUtil.log.info("creat VariableCW:name=" + name + ",dataType=" + dataType + ",Len=" + shape.reduce((x, y) => x * y))
   def this(name: String, array: ucar.ma2.Array,attributes: mutable.HashMap[String, String], dims: scala.List[(String, Int)]){
     this(name: String,
       array.getElementType.toString.toUpperCase,
